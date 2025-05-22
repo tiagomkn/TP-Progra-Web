@@ -1,0 +1,369 @@
+/* styles.css */
+
+/* 1. Reset y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+    line-height: 1.6;
+  }
+  /* ————————————————
+   Hero a pantalla completa
+   ———————————————— */
+  #hero {
+    /* Anula el max-width y el padding de section genérico */
+    max-width: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  #hero video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /* opcional: atenuar un poco más si necesitás que el texto destaque */
+    filter: brightness(0.4);
+  }
+
+  #hero .hero-content {
+    /* Para asegurarnos de que el contenido esté centrado sobre el video */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+
+
+    /* Navbar estilo “landing” */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+  }
+  .navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+  }
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  .navbar-menu a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .navbar-menu a:hover {
+    color: #00ff88;
+  }
+  .navbar-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .btn-navbar {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .btn-navbar:hover {
+    background-color: rgba(0, 255, 136, 0.1);
+  }
+  .btn-primary {
+    background-color: #00ff88;
+    color: #121212;
+  }
+  .btn-primary:hover {
+    background-color: #00cc66;
+  }
+
+  
+  /* 2. Navegación interna */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(18,18,18,0.9);
+    padding: 0.5rem 1rem;
+    z-index: 100;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+  nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav a:hover {
+    color: #00ff88;
+  }
+  
+  /* 3. Hero */
+  #hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #hero video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+  #hero .hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding: 1rem;
+  }
+  #hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  #hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  #hero .btn-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #00ff88;
+    color: #121212;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  #hero .btn-cta:hover {
+    background-color: #00cc66;
+  }
+  
+  /* 4. Secciones generales */
+  section {
+    padding: 4rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  section h2::after {
+    content: '';
+    width: 3rem;
+    height: 0.25rem;
+    background-color: #00ff88;
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+  }
+  
+  /* 5. Sobre el Club */
+  #acerca ul {
+    list-style: none;
+    margin-top: 1rem;
+  }
+  #acerca li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Bento grid para “Sobre el Club” */
+  /* Bento grid refinado */
+/* Grid fijo hasta 4 columnas, con centrado si sobra espacio */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 columnas iguales */
+    gap: 2rem;
+    justify-items: center;                  /* centra cada tarjeta en su celda */
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  /* En pantallas medianas (entre 900px y 1200px), mostramos 2 columnas */
+  @media (max-width: 1200px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* En móviles, una sola columna */
+  @media (max-width: 600px) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Aseguramos que cada tarjeta llene el ancho de su celda */
+  .bento-item {
+    width: 100%;
+    max-width: 320px;  /* opcional, para que no crezca demasiado en pantallas enormes */
+  }
+
+
+  .bento-item {
+    background-color: #1e1e1e;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centra horizontalmente */
+    justify-content: flex-start;
+    text-align: center;
+    min-height: 200px;        /* Igualar alturas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  }
+
+  .bento-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    background-color: #262626;
+  }
+
+  .bento-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .bento-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ddd;
+    line-height: 1.4;
+  }
+
+  
+  /* 6. Tablas */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  thead {
+    background-color: #1f1f1f;
+  }
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+  }
+  tbody tr {
+    border-bottom: 1px solid #2a2a2a;
+  }
+  tbody tr:hover {
+    background-color: #1f1f1f;
+  }
+  th {
+    font-weight: 600;
+  }
+  
+  /* 7. Miembros (botones) */
+  .edit-btn,
+  .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  .edit-btn:hover {
+    color: #00ff88;
+  }
+  .delete-btn:hover {
+    color: #ff4c4c;
+  }
+  
+  /* 8. Formulario */
+  #formulario {
+    background-color: #1f1f1f;
+    border-radius: 0.5rem;
+    padding: 2rem;
+  }
+  #formulario label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  #formulario input,
+  #formulario select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 0.25rem;
+    background-color: #121212;
+    color: #f5f5f5;
+  }
+  #formulario button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  #formulario button[type="submit"] {
+    background-color: #00ff88;
+    color: #121212;
+  }
+  #formulario button[type="submit"]:hover {
+    background-color: #00cc66;
+  }
+  #formulario button#btn-cancelar {
+    background-color: #ff4c4c;
+    color: #fff;
+  }
+  #formulario button#btn-cancelar:hover {
+    background-color: #cc3b3b;
+  }
+  
+  /* 9. Responsive */
+  @media (max-width: 600px) {
+    #hero h1 { font-size: 2rem; }
+    #hero p  { font-size: 1rem; }
+    nav ul { flex-direction: column; gap: 0.5rem; }
+  }
+  
