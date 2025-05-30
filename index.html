@@ -16,21 +16,24 @@
 
 <body>
 
-    <!-- NUEVA NAVBAR DE BOOTSTRAP -->
+     <!-- NAVBAR DE BOOTSTRAP -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#hero">Club Stride</a>
+      <a class="navbar-brand fw-bold" href="#hero">RUNNITBA</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavClub"
         aria-controls="navbarNavClub" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavClub">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav mx-auto"> 
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#hero">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#acerca">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#coaches">Coaches</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#ranking">Ranking</a>
@@ -42,8 +45,7 @@
             <a class="nav-link" href="#formulario-seccion">Formulario</a>
           </li>
         </ul>
-        <!-- NUEVO BOTÓN "ANÓTATE" A LA DERECHA -->
-        <a href="#formulario-seccion" class="btn btn-sm btn-custom-accent ms-lg-2">Anótate</a>
+        <a href="#formulario-seccion" class="btn btn-sm btn-custom-accent ms-lg-auto">Anótate</a>
       </div>
     </div>
   </nav>
@@ -87,7 +89,95 @@
         <div class="bento-text">Comunidad activa y eventos</div>
       </div>
     </div>
+    </section>
+    
+    <section id="coaches" class="container my-5">
+      <h2 class="text-center">Nuestros Coaches</h2>
+      <p class="lead text-center mb-5" style="color: #bbb;">
+        Conoce al equipo de expertos listos para ayudarte a alcanzar tus metas.
+      </p>
+      <div class="row justify-content-center g-4">
+        <!-- Coach 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+          <div class="coach-card-wrapper">
+            <img
+              src="assets/tiago.JPEG"
+              alt="Nombre Coach 1" class="coach-image img-fluid">
+            <div class="coach-info">
+              <h5 class="coach-name">Tiago Maetokuhiga</h5>
+              <p class="coach-specialty">Maratón y Resistencia</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Coach 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+          <div class="coach-card-wrapper">
+            <img
+              src="assets/tomi.jpg"
+              alt="Nombre Coach 2" class="coach-image img-fluid">
+            <div class="coach-info">
+              <h5 class="coach-name">Carlos Vega</h5>
+              <p class="coach-specialty">Velocidad y Técnica</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Coach 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+          <div class="coach-card-wrapper">
+            <img
+              src="assets/karen.jfif"
+              alt="Nombre Coach 3" class="coach-image img-fluid">
+            <div class="coach-info">
+              <h5 class="coach-name">Sofía Reyes</h5>
+              <p class="coach-specialty">Trail Running</p>
+            </div>
+          </div>
+        </div>
+
+      <!-- Coach 4 -->
+      <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+        <div class="coach-card-wrapper">
+          <img src="assets/salva.jpg" alt="Nombre Coach 4" class="coach-image img-fluid">
+          <div class="coach-info">
+            <h5 class="coach-name">Martín Gómez</h5>
+            <p class="coach-specialty">Recuperación y Prevención</p>
+          </div>
+        </div>
+      </div>
+      <!-- Puedes añadir más coaches siguiendo la misma estructura -->
+    </div>
   </section>
+
+    <!-- ... SECCIÓN #coaches ... -->
+
+  <!-- NUEVA SECCIÓN: FILOSOFÍA / CITA INSPIRADORA -->
+  <section id="filosofia" class="py-5 text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <blockquote class="blockquote filosofia-quote">
+            <p class="mb-0">
+              <span class="quote-mark-open">“</span>No corremos para añadir días a nuestra vida,
+              sino para <span class="highlight-text">añadir vida a nuestros días</span>.<span
+                class="quote-mark-close">”</span>
+            </p>
+          </blockquote>
+          <hr class="filosofia-divider my-4">
+          <div class="quote-author">
+            <p class="mb-0 fw-bold">Club Stride</p>
+            <p class="text-muted small">Filosofía del Club</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. RANKING (REINTEGRADO) -->
+  <section id="ranking" class="container my-5">
+  <!-- ... el resto de tu sección de ranking ... -->
+
 
   <!-- 3. RANKING (REINTEGRADO) -->
   <section id="ranking" class="container my-5">
@@ -191,10 +281,8 @@
   <!-- TOAST de éxito -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast align-items-center border-0" role="alert" <!-- Clase de color se añade en JS -->
-      aria-live="assertive" aria-atomic="true">
       <div class="d-flex">
         <div class="toast-body" id="toast-message">
-          Operación realizada con éxito.
         </div>
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
           aria-label="Cerrar"></button>
