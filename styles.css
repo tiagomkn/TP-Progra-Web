@@ -1,369 +1,310 @@
 /* styles.css */
 
-/* 1. Reset y tipografía */
+/* 1. Reset y Tipografía General */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  html {
+}
+html {
     scroll-behavior: smooth;
-  }
-  body {
+}
+body {
     font-family: 'Montserrat', sans-serif;
     background-color: #121212;
     color: #f5f5f5;
     line-height: 1.6;
-  }
-  /* ————————————————
-   Hero a pantalla completa
-   ———————————————— */
-  #hero {
-    /* Anula el max-width y el padding de section genérico */
+    padding-top: 70px; /* Ajusta si la altura de tu navbar es diferente */
+}
+
+/* 2. Navbar Bootstrap Personalizado */
+.custom-navbar {
+    background-color: rgba(18, 18, 18, 0.9) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+}
+.custom-navbar .navbar-brand {
+    color: #00ff88;
+    font-size: 1.6rem;
+}
+.custom-navbar .navbar-brand:hover {
+    color: #00dd77;
+}
+.custom-navbar .nav-link {
+    color: #e0e0e0;
+    font-weight: 500;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    transition: color 0.2s ease-in-out;
+}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: #00ff88;
+}
+.custom-navbar .navbar-toggler {
+    border-color: rgba(0, 255, 136, 0.4);
+}
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 255, 136, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Botón "Anótate" en el Navbar */
+.custom-navbar .btn-custom-accent {
+  background-color: #00ff88;
+  color: #121212;
+  border-color: #00ff88;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  white-space: nowrap; /* Evita que el texto del botón se parta */
+}
+.custom-navbar .btn-custom-accent:hover,
+.custom-navbar .btn-custom-accent:focus {
+  background-color: #00dd77;
+  border-color: #00d06f;
+  color: #121212;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 255, 136, 0.2);
+}
+
+/* Comportamiento del Navbar Colapsado (Móvil y Tablet Pequeña) */
+@media (max-width: 991.98px) { /* Bootstrap lg breakpoint */
+    .custom-navbar .navbar-collapse {
+        background-color: rgba(18, 18, 18, 0.95);
+        border-top: 1px solid rgba(0, 255, 136, 0.15);
+        margin-top: 0.5rem;
+        padding-bottom: 0.5rem; /* Espacio inferior en menú colapsado */
+    }
+    .custom-navbar .navbar-nav .nav-item {
+        text-align: center;
+    }
+    .custom-navbar .nav-link {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    .custom-navbar .btn-custom-accent {
+        display: block;
+        width: fit-content;
+        margin: 0.75rem auto 0.25rem; /* Centrado y con márgenes verticales */
+    }
+}
+
+/* Comportamiento del Navbar Expandido (Desktop) */
+@media (min-width: 992px) { /* Bootstrap lg breakpoint y superior */
+    .custom-navbar .navbar-collapse .btn-custom-accent {
+        margin-left: auto !important; /* Empuja el botón al extremo derecho */
+    }
+}
+
+/* 3. Sección Hero */
+#hero {
     max-width: none;
     width: 100vw;
     height: 100vh;
     padding: 0;
     margin: 0;
     position: relative;
-  }
-
-  #hero video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    /* opcional: atenuar un poco más si necesitás que el texto destaque */
-    filter: brightness(0.4);
-  }
-
-  #hero .hero-content {
-    /* Para asegurarnos de que el contenido esté centrado sobre el video */
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-
-
-    /* Navbar estilo “landing” */
-  .navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(18, 18, 18, 0.7);
-    backdrop-filter: blur(8px);
-    z-index: 200;
-  }
-  .navbar .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-  }
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-  }
-  .navbar-menu {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-  }
-  .navbar-menu a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  .navbar-menu a:hover {
-    color: #00ff88;
-  }
-  .navbar-actions {
-    display: flex;
-    gap: 0.75rem;
-  }
-  .btn-navbar {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-weight: 500;
-    border: 1px solid #00ff88;
-    color: #00ff88;
-    transition: background-color 0.2s, color 0.2s;
-  }
-  .btn-navbar:hover {
-    background-color: rgba(0, 255, 136, 0.1);
-  }
-  .btn-primary {
-    background-color: #00ff88;
-    color: #121212;
-  }
-  .btn-primary:hover {
-    background-color: #00cc66;
-  }
-
-  
-  /* 2. Navegación interna */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(18,18,18,0.9);
-    padding: 0.5rem 1rem;
-    z-index: 100;
-  }
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-  }
-  nav a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  nav a:hover {
-    color: #00ff88;
-  }
-  
-  /* 3. Hero */
-  #hero {
-    position: relative;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-  }
-  #hero video {
+    margin-top: -70px; /* Compensa el padding-top del body */
+}
+#hero video {
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    filter: brightness(0.5);
-  }
-  #hero .hero-content {
+    filter: brightness(0.4);
+    z-index: -1;
+}
+#hero .hero-content {
     position: relative;
-    text-align: center;
     z-index: 1;
+    text-align: center;
     padding: 1rem;
-  }
-  #hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  #hero p {
-    font-size: 1.25rem;
+    max-width: 900px;
+}
+#hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+}
+#hero p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
     margin-bottom: 1.5rem;
-  }
-  #hero .btn-cta {
+    color: #e0e0e0;
+}
+#hero .btn-cta {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     background-color: #00ff88;
     color: #121212;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  #hero .btn-cta:hover {
-    background-color: #00cc66;
-  }
-  
-  /* 4. Secciones generales */
-  section {
-    padding: 4rem 1rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  section h2 {
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+}
+#hero .btn-cta:hover {
+    background-color: #00dd77;
+    transform: translateY(-2px);
+}
+
+/* 4. Secciones Generales */
+section h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     position: relative;
-  }
-  section h2::after {
+    text-align: center;
+    padding-bottom: 0.75rem;
+}
+section h2::after {
     content: '';
-    width: 3rem;
+    width: 4rem;
     height: 0.25rem;
     background-color: #00ff88;
     position: absolute;
-    bottom: -0.5rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#miembros h2, #formulario-seccion h2 { /* Títulos alineados a la izquierda */
+    text-align: left;
+}
+#miembros h2::after, #formulario-seccion h2::after {
     left: 0;
-  }
-  
-  /* 5. Sobre el Club */
-  #acerca ul {
-    list-style: none;
-    margin-top: 1rem;
-  }
-  #acerca li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+    transform: translateX(0);
+}
 
-  /* Bento grid para “Sobre el Club” */
-  /* Bento grid refinado */
-/* Grid fijo hasta 4 columnas, con centrado si sobra espacio */
-  .bento-grid {
+/* 5. Sobre el Club - Bento Grid */
+.bento-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* 4 columnas iguales */
-    gap: 2rem;
-    justify-items: center;                  /* centra cada tarjeta en su celda */
-    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
-  }
-
-  /* En pantallas medianas (entre 900px y 1200px), mostramos 2 columnas */
-  @media (max-width: 1200px) {
-    .bento-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* En móviles, una sola columna */
-  @media (max-width: 600px) {
-    .bento-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Aseguramos que cada tarjeta llene el ancho de su celda */
-  .bento-item {
-    width: 100%;
-    max-width: 320px;  /* opcional, para que no crezca demasiado en pantallas enormes */
-  }
-
-
-  .bento-item {
+}
+.bento-item {
     background-color: #1e1e1e;
-    border-radius: 1rem;
-    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;     /* Centra horizontalmente */
-    justify-content: flex-start;
+    align-items: center;
     text-align: center;
-    min-height: 200px;        /* Igualar alturas */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    min-height: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  }
-
-  .bento-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-    background-color: #262626;
-  }
-
-  .bento-icon {
-    font-size: 3rem;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background-color: #242424;
+}
+.bento-icon {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-  }
-
-  .bento-text {
+    color: #00ff88;
+}
+.bento-text {
     font-size: 1rem;
     font-weight: 400;
     color: #ddd;
     line-height: 1.4;
-  }
+}
 
-  
-  /* 6. Tablas */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  thead {
-    background-color: #1f1f1f;
-  }
-  th, td {
-    padding: 0.75rem;
-    text-align: left;
-  }
-  tbody tr {
-    border-bottom: 1px solid #2a2a2a;
-  }
-  tbody tr:hover {
-    background-color: #1f1f1f;
-  }
-  th {
-    font-weight: 600;
-  }
-  
-  /* 7. Miembros (botones) */
-  .edit-btn,
-  .delete-btn {
+/* 6. Tablas */
+.table-dark.table-hover tbody tr:hover {
+    background-color: #2c3034;
+    color: #fff;
+}
+.table td, .table th {
+    border-top-color: #3a3f44;
+}
+#members-body img, #ranking-body img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0, 255, 136, 0.2);
+}
+
+/* 7. Miembros (Botones de acción en tabla) */
+.edit-btn,
+.delete-btn {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-right: 0.5rem;
-  }
-  .edit-btn:hover {
-    color: #00ff88;
-  }
-  .delete-btn:hover {
-    color: #ff4c4c;
-  }
-  
-  /* 8. Formulario */
-  #formulario {
-    background-color: #1f1f1f;
-    border-radius: 0.5rem;
-    padding: 2rem;
-  }
-  #formulario label {
-    display: block;
-    margin-bottom: 1rem;
-  }
-  #formulario input,
-  #formulario select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #2a2a2a;
-    border-radius: 0.25rem;
-    background-color: #121212;
+    padding: 0.2rem 0.4rem;
+    color: #adb5bd;
+    transition: color 0.2s;
+}
+.edit-btn:hover { color: #00ff88; }
+.delete-btn:hover { color: #ff4c4c; }
+
+/* 8. Formulario */
+#member-form.bg-form-custom {
+    background-color: #1e1e1e;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+}
+#formulario-seccion label {
+    color: #c5c5c5;
+    font-weight: 500;
+}
+#formulario-seccion .form-control,
+#formulario-seccion .form-select {
+    background-color: #2a2a2a;
     color: #f5f5f5;
-  }
-  #formulario button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-  #formulario button[type="submit"] {
+    border: 1px solid #3a3a3a;
+}
+#formulario-seccion .form-control:focus,
+#formulario-seccion .form-select:focus {
+    background-color: #303030;
+    color: #f5f5f5;
+    border-color: #00ff88;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 136, 0.25);
+}
+#formulario-seccion ::placeholder {
+    color: #777;
+}
+#member-form .btn-primary {
     background-color: #00ff88;
+    border-color: #00ff88;
     color: #121212;
-  }
-  #formulario button[type="submit"]:hover {
-    background-color: #00cc66;
-  }
-  #formulario button#btn-cancelar {
-    background-color: #ff4c4c;
-    color: #fff;
-  }
-  #formulario button#btn-cancelar:hover {
-    background-color: #cc3b3b;
-  }
-  
-  /* 9. Responsive */
-  @media (max-width: 600px) {
-    #hero h1 { font-size: 2rem; }
-    #hero p  { font-size: 1rem; }
-    nav ul { flex-direction: column; gap: 0.5rem; }
-  }
-  
+    font-weight: bold;
+}
+#member-form .btn-primary:hover {
+    background-color: #00dd77;
+    border-color: #00dd77;
+}
+
+/* 9. Responsive Adicional */
+@media (max-width: 768px) { /* md breakpoint */
+    section h2 { font-size: 1.8rem; }
+    .bento-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+@media (max-width: 576px) { /* sm breakpoint */
+    body {
+        padding-top: 56px; /* Altura navbar colapsada Bootstrap por defecto */
+    }
+    #hero {
+        margin-top: -56px; /* Compensar padding-top */
+    }
+    #hero h1 { font-size: clamp(1.8rem, 5vw, 2.2rem); }
+    #hero p  { font-size: clamp(0.9rem, 2.5vw, 1rem); }
+    .custom-navbar .navbar-brand {
+        font-size: 1.3rem;
+    }
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+}
