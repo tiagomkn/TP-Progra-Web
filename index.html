@@ -10,7 +10,8 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <!-- Tu CSS principal (DESPUÉS de Bootstrap) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tu CSS principal (DESPUÉS de Bootstrap) -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -90,6 +91,95 @@
       </div>
     </div>
     </section>
+
+    <!-- ... SECCIÓN #acerca ... -->
+
+  <!-- NUEVA SECCIÓN: DESTACADOS / LOGROS -->
+  <section id="destacados" class="py-5 section-destacados">
+    <div class="container">
+      <h2 class="text-center mb-5">Últimos Logros</h2>
+      <div id="carouselDestacados" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <!-- Indicadores (los puntitos) -->
+        <div class="carousel-indicators destacados-indicators">
+          <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Contenido del Carrusel -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active" data-bs-interval="7000">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-6 order-lg-2">
+                <img src="assets/salva.jpg" class="d-block w-100 rounded shadow-lg img-destacado" alt="Maratón Ganada">
+              </div>
+              <div class="col-lg-6 order-lg-1 slide-text-content">
+                <h3 class="display-6 fw-light">¡CAMPEONES DE LA MARATÓN DE LA CIUDAD!</h3>
+                <p class="lead my-4" style="color: #ccc;">
+                  Nuestros corredores del Club Stride demostraron su garra y dedicación,
+                  llevándose el primer puesto en la prestigiosa Maratón Anual de la Ciudad.
+                  ¡Un logro que inspira a toda nuestra comunidad!
+                </p>
+                <a href="#miembros" class="btn btn-outline-accent btn-lg">
+                  Conoce a los Héroes <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" data-bs-interval="7000">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-6">
+                <img src="assets/finish.png" class="d-block w-100 rounded shadow-lg img-destacado" alt="Nuevo Récord Trail">
+              </div>
+              <div class="col-lg-6 slide-text-content">
+                <h3 class="display-6 fw-light">NUEVO RÉCORD EN EL DESAFÍO TRAIL</h3>
+                <p class="lead my-4" style="color: #ccc;">
+                  El equipo de trail running superó todas las expectativas, estableciendo un nuevo
+                  récord en el exigente Desafío de Montaña. ¡La aventura y la superación son parte de nuestro ADN!
+                </p>
+                <a href="#coaches" class="btn btn-outline-accent btn-lg">
+                  Entrena con los Mejores <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" data-bs-interval="7000">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-6 order-lg-2">
+                <img src="assets/finish.png" class="d-block w-100 rounded shadow-lg img-destacado" alt="Comunidad Creciendo">
+              </div>
+              <div class="col-lg-6 order-lg-1 slide-text-content">
+                <h3 class="display-6 fw-light">NUESTRA COMUNIDAD ALCANZA NUEVOS HORIZONTES</h3>
+                <p class="lead my-4" style="color: #ccc;">
+                  Con más de 500 miembros activos, Club Stride se consolida como un referente
+                  para corredores de todos los niveles. ¡Gracias por ser parte de esta increíble familia!
+                </p>
+                <a href="#formulario-seccion" class="btn btn-outline-accent btn-lg">
+                  Únete al Club <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles Prev/Next -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
     
     <section id="coaches" class="container my-5">
       <h2 class="text-center">Nuestros Coaches</h2>
@@ -166,7 +256,7 @@
           </blockquote>
           <hr class="filosofia-divider my-4">
           <div class="quote-author">
-            <p class="mb-0 fw-bold">Club Stride</p>
+            <p class="mb-0 fw-bold">RUNNITBA</p>
             <p class="text-muted small">Filosofía del Club</p>
           </div>
         </div>

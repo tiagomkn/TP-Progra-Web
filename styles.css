@@ -245,6 +245,144 @@ section h2::after {
   line-height: 1.4;
 }
 
+/* styles.css */
+
+/* ... (tus estilos existentes) ... */
+
+/* 8. Sección Destacados / Logros (Carrusel) */
+.section-destacados {
+  background-color: #1a1a1a;
+  /* Un fondo oscuro para la sección */
+  /* O un degradado sutil */
+  /* background-image: linear-gradient(to bottom, #181818, #1f1f1f); */
+  position: relative;
+  /* Para los controles si se posicionan absoluto fuera del carrusel */
+}
+
+#carouselDestacados .carousel-item {
+  /* Altura mínima para los slides, ajusta según tu contenido */
+  /* min-height: 60vh;  */
+  padding: 2rem 0;
+  /* Espaciado interno para los slides */
+}
+
+.img-destacado {
+  max-height: 500px;
+  /* Limita la altura de la imagen */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  /* Bordes redondeados como en el ejemplo */
+}
+
+.slide-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 100%;  Si quieres que el texto ocupe toda la altura disponible */
+  padding: 0 1rem;
+  /* Espaciado para el texto */
+}
+
+@media (max-width: 991.98px) {
+
+  /* Tablets y móviles */
+  .slide-text-content {
+    text-align: center;
+    padding-top: 2rem;
+    /* Espacio cuando la imagen está arriba */
+  }
+
+  .slide-text-content .btn-outline-accent {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.slide-text-content h3 {
+  color: #f0f0f0;
+  /* Color para el título del slide */
+  font-weight: 300;
+  /* Un peso más ligero como en el ejemplo */
+  letter-spacing: -0.5px;
+}
+
+.slide-text-content .lead {
+  color: #b0b0b0;
+  /* Color para el texto descriptivo */
+  font-size: 1.1rem;
+}
+
+/* Estilo para el nuevo botón outline */
+.btn-outline-accent {
+  color: #00ff88;
+  border-color: #00ff88;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-accent:hover,
+.btn-outline-accent:focus {
+  background-color: #00ff88;
+  color: #121212;
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Indicadores del Carrusel (puntitos) */
+.destacados-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.destacados-indicators button.active {
+  background-color: #00ff88;
+  /* Color de acento para el indicador activo */
+  /* Opcional: un borde para el activo si el fondo es similar */
+  /* border: 1px solid #00ff88; */
+}
+#carouselDestacados.carousel-fade .carousel-item {
+    transition-property: opacity; /* Asegura que solo se transicione la opacidad */
+    transition-duration: 0.4s; /* Intenta un valor más corto, ej: 0.4s */
+    /* Bootstrap ya debería tener transition-timing-function: ease-in-out; */
+}
+/* Controles Prev/Next del Carrusel */
+#carouselDestacados .carousel-control-prev,
+#carouselDestacados .carousel-control-next {
+  width: 5%;
+  /* Ancho de la zona clickeable */
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+#carouselDestacados .carousel-control-prev:hover,
+#carouselDestacados .carousel-control-next:hover {
+  opacity: 1;
+}
+
+#carouselDestacados .carousel-control-prev-icon,
+#carouselDestacados .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo para los iconos */
+  border-radius: 50%;
+  padding: 15px;
+  /* Tamaño del fondo */
+  background-size: 60% 60%;
+  /* Tamaño del icono SVG dentro del fondo */
+  /* Para usar tu color de acento en las flechas (requiere filtrar el SVG) */
+  filter: invert(75%) sepia(83%) saturate(2203%) hue-rotate(113deg) brightness(102%) contrast(102%);
+  /* #00ff88 */
+}
+
+
+/* ... (tus estilos de Coaches, Filosofía, Tablas, Formulario, Responsive Adicional) ... */
+
 
 #coaches .lead {
   color: #b0b0b0;
@@ -316,65 +454,87 @@ section h2::after {
 
 /* 7. Sección Filosofía / Cita Inspiradora */
 #filosofia {
-    background-color: #161616; /* Un fondo ligeramente diferente para destacar la sección */
-    /* O puedes usar un degradado sutil o una imagen de fondo muy tenue */
-    /* background-image: linear-gradient(rgba(18,18,18,0.95), rgba(22,22,22,0.98)); */
+  background-color: #161616;
+  /* Un fondo ligeramente diferente para destacar la sección */
+  /* O puedes usar un degradado sutil o una imagen de fondo muy tenue */
+  /* background-image: linear-gradient(rgba(18,18,18,0.95), rgba(22,22,22,0.98)); */
 }
 
 .filosofia-quote p {
-    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tamaño de fuente responsive grande */
-    font-weight: 300; /* Un peso más ligero para la cita */
-    line-height: 1.4;
-    color: #e0e0e0;
-    position: relative; /* Para posicionar las comillas */
-    padding-left: 1.5rem; /* Espacio para la comilla de apertura */
-    padding-right: 1.5rem; /* Espacio para la comilla de cierre */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  /* Tamaño de fuente responsive grande */
+  font-weight: 300;
+  /* Un peso más ligero para la cita */
+  line-height: 1.4;
+  color: #e0e0e0;
+  position: relative;
+  /* Para posicionar las comillas */
+  padding-left: 1.5rem;
+  /* Espacio para la comilla de apertura */
+  padding-right: 1.5rem;
+  /* Espacio para la comilla de cierre */
 }
 
 .filosofia-quote .quote-mark-open,
 .filosofia-quote .quote-mark-close {
-    font-family: 'Georgia', serif; /* Una fuente serif para las comillas puede quedar bien */
-    font-size: 3.5em; /* Comillas grandes */
-    color: #00ff88; /* Color de acento */
-    line-height: 0; /* Para controlar el posicionamiento vertical */
-    opacity: 0.6;
+  font-family: 'Georgia', serif;
+  /* Una fuente serif para las comillas puede quedar bien */
+  font-size: 3.5em;
+  /* Comillas grandes */
+  color: #00ff88;
+  /* Color de acento */
+  line-height: 0;
+  /* Para controlar el posicionamiento vertical */
+  opacity: 0.6;
 }
 
 .filosofia-quote .quote-mark-open {
-    position: absolute;
-    left: -0.5em; /* Ajusta para que quede bien con el padding */
-    top: 0.15em; /* Ajusta el posicionamiento vertical */
+  position: absolute;
+  left: -0.5em;
+  /* Ajusta para que quede bien con el padding */
+  top: 0.15em;
+  /* Ajusta el posicionamiento vertical */
 }
 
 .filosofia-quote .quote-mark-close {
-    position: absolute;
-    right: -0.5em; /* Ajusta para que quede bien con el padding */
-    bottom: -0.1em; /* Ajusta el posicionamiento vertical */
+  position: absolute;
+  right: -0.5em;
+  /* Ajusta para que quede bien con el padding */
+  bottom: -0.1em;
+  /* Ajusta el posicionamiento vertical */
 }
 
 .filosofia-quote .highlight-text {
-    color: #00ff88; /* Color de acento para resaltar */
-    font-weight: 500; /* Un poco más de peso para el texto resaltado */
+  color: #00ff88;
+  /* Color de acento para resaltar */
+  font-weight: 500;
+  /* Un poco más de peso para el texto resaltado */
 }
 
 .filosofia-divider {
-    border: none;
-    height: 1px;
-    background-color: rgba(0, 255, 136, 0.3); /* Línea con tu color de acento y transparencia */
-    max-width: 150px; /* Ancho de la línea */
-    margin-left: auto; /* Centrar la línea */
-    margin-right: auto;
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 255, 136, 0.3);
+  /* Línea con tu color de acento y transparencia */
+  max-width: 150px;
+  /* Ancho de la línea */
+  margin-left: auto;
+  /* Centrar la línea */
+  margin-right: auto;
 }
 
-.quote-author p:first-child { /* Para "Club Stride" */
-    color: #f5f5f5;
-    font-size: 1.1rem;
-    margin-bottom: 0.1rem;
+.quote-author p:first-child {
+  /* Para "Club Stride" */
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem;
 }
 
-.quote-author .text-muted { /* Para "Filosofía del Club" */
-    color: #999 !important; /* Sobrescribir color de .text-muted de Bootstrap si es necesario */
-    font-size: 0.9rem;
+.quote-author .text-muted {
+  /* Para "Filosofía del Club" */
+  color: #999 !important;
+  /* Sobrescribir color de .text-muted de Bootstrap si es necesario */
+  font-size: 0.9rem;
 }
 
 
