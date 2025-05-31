@@ -3,21 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ESENCIAL para responsividad -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Club Stride – Gestión de Miembros</title>
-  <!-- Fuente Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Tu CSS principal (DESPUÉS de Bootstrap) -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-     <!-- NAVBAR DE BOOTSTRAP -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#hero">RUNNITBA</a>
@@ -26,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavClub">
-        <ul class="navbar-nav mx-auto"> 
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#hero">Inicio</a>
           </li>
@@ -36,24 +32,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#coaches">Coaches</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#ranking">Ranking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#miembros">Miembros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#formulario-seccion">Formulario</a>
-          </li>
         </ul>
-        <a href="#formulario-seccion" class="btn btn-sm btn-custom-accent ms-lg-auto">Anótate</a>
+        <a href="#miembros" class="btn btn-sm btn-custom-accent ms-lg-auto">Anótate</a>
       </div>
     </div>
   </nav>
 
-  <!-- 1. HERO -->
   <section id="hero">
-    <video autoplay muted loop playsinline> {/* playsinline para iOS */}
+    <video autoplay muted loop playsinline>
       <source src="assets/Hero-ClubRunning.mp4" type="video/mp4">
       Tu navegador no soporta video.
     </video>
@@ -64,62 +50,47 @@
     </div>
   </section>
 
-  <!-- 2. SOBRE EL CLUB -->
-  <section id="acerca" class="container my-5">
-    <h2>Sobre el Club</h2>
-    <p>
-      Club Stride es una comunidad de corredores urbanos que busca superar sus límites
-      día a día. Ya seas principiante o maratonista, acá vas a encontrar motivación,
-      entrenamiento y apoyo constante.
-    </p>
-    <div class="bento-grid">
-      <div class="bento-item">
-        <div class="bento-icon">👟</div>
-        <div class="bento-text">Entrenamientos grupales semanales</div>
-      </div>
-      <div class="bento-item">
-        <div class="bento-icon">📊</div>
-        <div class="bento-text">Seguimiento de tu progreso</div>
-      </div>
-      <div class="bento-item">
-        <div class="bento-icon">🎖️</div>
-        <div class="bento-text">Rankings motivacionales</div>
-      </div>
-      <div class="bento-item">
-        <div class="bento-icon">🌎</div>
-        <div class="bento-text">Comunidad activa y eventos</div>
+  <!-- 2. SOBRE EL CLUB (REEMPLAZADO) -->
+  <section id="acerca" class="about-section-new py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 about-text-content mb-4 mb-lg-0">
+          <p class="text-uppercase about-eyebrow">NUESTRA HISTORIA</p>
+          <h2 class="about-heading">Fundado en 2024 por un grupo de corredores</h2>
+          <p class="about-description">
+            RUNNITBA nació de la idea de transformar el running en una experiencia comunitaria. Combinando la energía de Buenos Aires con la disciplina del entrenamiento, ofrecemos un espacio donde cada paso suma, sin importar tu nivel. Únete a nosotros para descubrir la alegría de correr en compañía y alcanzar tus metas, un kilómetro a la vez.
+          </p>
+          <a href="#miembros" class="btn btn-about-us">INSCRIBITE</a>
+        </div>
+        <div class="col-lg-5 about-image-wrapper">
+          <img src="assets/sobre.jpg" alt="Tennis player in action" class="img-fluid about-image-new">
+        </div>
       </div>
     </div>
-    </section>
+  </section>
 
-    <!-- ... SECCIÓN #acerca ... -->
-
-  <!-- NUEVA SECCIÓN: DESTACADOS / LOGROS -->
   <section id="destacados" class="py-5 section-destacados">
     <div class="container">
       <h2 class="text-center mb-5">Últimos Logros</h2>
       <div id="carouselDestacados" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <!-- Indicadores (los puntitos) -->
         <div class="carousel-indicators destacados-indicators">
           <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
-        <!-- Contenido del Carrusel -->
         <div class="carousel-inner">
-          <!-- Slide 1 -->
           <div class="carousel-item active" data-bs-interval="7000">
             <div class="row align-items-center gy-4">
               <div class="col-lg-6 order-lg-2">
-                <img src="assets/salva.jpg" class="d-block w-100 rounded shadow-lg img-destacado" alt="Maratón Ganada">
+                <img src="assets/l3.jpg" class="d-block w-100 rounded shadow-lg img-destacado" alt="Maratón Ganada">
               </div>
               <div class="col-lg-6 order-lg-1 slide-text-content">
                 <h3 class="display-6 fw-light">¡CAMPEONES DE LA MARATÓN DE LA CIUDAD!</h3>
-                <p class="lead my-4" style="color: #ccc;">
-                  Nuestros corredores del Club Stride demostraron su garra y dedicación,
-                  llevándose el primer puesto en la prestigiosa Maratón Anual de la Ciudad.
-                  ¡Un logro que inspira a toda nuestra comunidad!
+                <p class="lead my-4">
+                  Nuestros corredores de RUNNITBA demostraron su garra y dedicación,
+                  llevándose el primer puesto en la prestigiosa Maratón de Buenos Aires.
+                  ¡Un logro que inspira a todos!
                 </p>
                 <a href="#miembros" class="btn btn-outline-accent btn-lg">
                   Conoce a los Héroes <i class="fas fa-arrow-right ms-2"></i>
@@ -128,17 +99,16 @@
             </div>
           </div>
 
-          <!-- Slide 2 -->
           <div class="carousel-item" data-bs-interval="7000">
             <div class="row align-items-center gy-4">
               <div class="col-lg-6">
-                <img src="assets/finish.png" class="d-block w-100 rounded shadow-lg img-destacado" alt="Nuevo Récord Trail">
+                <img src="assets/l2.jpg" class="d-block w-100 rounded shadow-lg img-destacado" alt="Nuevo Récord Trail">
               </div>
               <div class="col-lg-6 slide-text-content">
-                <h3 class="display-6 fw-light">NUEVO RÉCORD EN EL DESAFÍO TRAIL</h3>
-                <p class="lead my-4" style="color: #ccc;">
-                  El equipo de trail running superó todas las expectativas, estableciendo un nuevo
-                  récord en el exigente Desafío de Montaña. ¡La aventura y la superación son parte de nuestro ADN!
+                <h3 class="display-6 fw-light">EL CORAZON DE NUESTRO ÉXITO</h3>
+                <!-- MODIFICADO: se quitó style="color: #ccc;" -->
+                <p class="lead my-4">
+                  El éxito de cada paso y cada récord es posible gracias al apoyo incondicional de nuestros patrocinadores. Comparten nuestra visión de aventura y superación, impulsándonos a conquistar nuevos desafíos en cada sendero. 
                 </p>
                 <a href="#coaches" class="btn btn-outline-accent btn-lg">
                   Entrena con los Mejores <i class="fas fa-arrow-right ms-2"></i>
@@ -151,23 +121,22 @@
           <div class="carousel-item" data-bs-interval="7000">
             <div class="row align-items-center gy-4">
               <div class="col-lg-6 order-lg-2">
-                <img src="assets/finish.png" class="d-block w-100 rounded shadow-lg img-destacado" alt="Comunidad Creciendo">
+                <img src="assets/l1.jfif" class="d-block w-100 rounded shadow-lg img-destacado" alt="Comunidad Creciendo">
               </div>
               <div class="col-lg-6 order-lg-1 slide-text-content">
                 <h3 class="display-6 fw-light">NUESTRA COMUNIDAD ALCANZA NUEVOS HORIZONTES</h3>
-                <p class="lead my-4" style="color: #ccc;">
-                  Con más de 500 miembros activos, Club Stride se consolida como un referente
+                <!-- MODIFICADO: se quitó style="color: #ccc;" -->
+                <p class="lead my-4">
+                  Con más de 100 miembros activos, RUNNITBA se consolida como un referente
                   para corredores de todos los niveles. ¡Gracias por ser parte de esta increíble familia!
                 </p>
-                <a href="#formulario-seccion" class="btn btn-outline-accent btn-lg">
+                <a href="#miembros" class="btn btn-outline-accent btn-lg">
                   Únete al Club <i class="fas fa-arrow-right ms-2"></i>
                 </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Controles Prev/Next -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Anterior</span>
@@ -180,53 +149,43 @@
     </div>
   </section>
 
-    
-    <section id="coaches" class="container my-5">
-      <h2 class="text-center">Nuestros Coaches</h2>
-      <p class="lead text-center mb-5" style="color: #bbb;">
-        Conoce al equipo de expertos listos para ayudarte a alcanzar tus metas.
-      </p>
-      <div class="row justify-content-center g-4">
-        <!-- Coach 1 -->
-        <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
-          <div class="coach-card-wrapper">
-            <img
-              src="assets/tiago.JPEG"
-              alt="Nombre Coach 1" class="coach-image img-fluid">
-            <div class="coach-info">
-              <h5 class="coach-name">Tiago Maetokuhiga</h5>
-              <p class="coach-specialty">Maratón y Resistencia</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Coach 2 -->
-        <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
-          <div class="coach-card-wrapper">
-            <img
-              src="assets/tomi.jpg"
-              alt="Nombre Coach 2" class="coach-image img-fluid">
-            <div class="coach-info">
-              <h5 class="coach-name">Carlos Vega</h5>
-              <p class="coach-specialty">Velocidad y Técnica</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Coach 3 -->
-        <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
-          <div class="coach-card-wrapper">
-            <img
-              src="assets/karen.jfif"
-              alt="Nombre Coach 3" class="coach-image img-fluid">
-            <div class="coach-info">
-              <h5 class="coach-name">Sofía Reyes</h5>
-              <p class="coach-specialty">Trail Running</p>
-            </div>
-          </div>
-        </div>
 
-      <!-- Coach 4 -->
+  <section id="coaches" class="container my-5">
+    <h2 class="text-center">Nuestros Coaches</h2>
+    <p class="lead text-center mb-5" style="color: #bbb;">
+      Conoce al equipo de expertos listos para ayudarte a alcanzar tus metas.
+    </p>
+    <div class="row justify-content-center g-4">
+      <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+        <div class="coach-card-wrapper">
+          <img src="assets/tiago.JPEG" alt="Nombre Coach 1" class="coach-image img-fluid">
+          <div class="coach-info">
+            <h5 class="coach-name">Tiago Maetokuhiga</h5>
+            <p class="coach-specialty">Maratón y Resistencia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+        <div class="coach-card-wrapper">
+          <img src="assets/tomi.jpg" alt="Nombre Coach 2" class="coach-image img-fluid">
+          <div class="coach-info">
+            <h5 class="coach-name">Carlos Vega</h5>
+            <p class="coach-specialty">Velocidad y Técnica</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
+        <div class="coach-card-wrapper">
+          <img src="assets/karen.jfif" alt="Nombre Coach 3" class="coach-image img-fluid">
+          <div class="coach-info">
+            <h5 class="coach-name">Sofía Rogue</h5>
+            <p class="coach-specialty">Trail Running</p>
+          </div>
+        </div>
+      </div>
+
       <div class="col-lg-3 col-md-4 col-sm-6 coach-item">
         <div class="coach-card-wrapper">
           <img src="assets/salva.jpg" alt="Nombre Coach 4" class="coach-image img-fluid">
@@ -236,13 +195,9 @@
           </div>
         </div>
       </div>
-      <!-- Puedes añadir más coaches siguiendo la misma estructura -->
     </div>
   </section>
 
-    <!-- ... SECCIÓN #coaches ... -->
-
-  <!-- NUEVA SECCIÓN: FILOSOFÍA / CITA INSPIRADORA -->
   <section id="filosofia" class="py-5 text-center">
     <div class="container">
       <div class="row justify-content-center">
@@ -250,8 +205,7 @@
           <blockquote class="blockquote filosofia-quote">
             <p class="mb-0">
               <span class="quote-mark-open">“</span>No corremos para añadir días a nuestra vida,
-              sino para <span class="highlight-text">añadir vida a nuestros días</span>.<span
-                class="quote-mark-close">”</span>
+              sino para <span class="highlight-text">añadir vida a nuestros días</span>.<span class="quote-mark-close">”</span>
             </p>
           </blockquote>
           <hr class="filosofia-divider my-4">
@@ -264,40 +218,32 @@
     </div>
   </section>
 
-  <!-- 3. RANKING (REINTEGRADO) -->
-  <section id="ranking" class="container my-5">
-  <!-- ... el resto de tu sección de ranking ... -->
-
-
-  <!-- 3. RANKING (REINTEGRADO) -->
   <section id="ranking" class="container my-5">
     <h2>🏆 Ranking de Corredores</h2>
     <div class="table-responsive">
-        <table class="table table-striped table-hover table-dark align-middle">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Km Totales</th>
-                <th>Categoría</th>
-                <th>Mejor Tiempo 5K</th>
-            </tr>
-            </thead>
-            <tbody id="ranking-body">
-            <!-- Se llenará desde app.js -->
-            </tbody>
-        </table>
+      <table class="table table-striped table-hover table-dark align-middle">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Km Totales</th>
+            <th>Categoría</th>
+            <th>Mejor Tiempo 5K</th>
+          </tr>
+        </thead>
+        <tbody id="ranking-body">
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- 4. MIEMBROS (CRUD) -->
   <section id="miembros" class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h2 class="mb-0">📋 Miembros del Club</h2>
       <button id="btn-nuevo" class="btn btn-success">➕ Nuevo Corredor</button>
     </div>
     <div class="mb-3">
-        <input type="text" id="search-input" class="form-control" placeholder="Buscar miembro por nombre...">
+      <input type="text" id="search-input" class="form-control" placeholder="Buscar miembro por nombre...">
     </div>
     <div class="table-responsive">
       <table class="table table-striped table-hover table-dark align-middle">
@@ -313,13 +259,11 @@
           </tr>
         </thead>
         <tbody id="members-body">
-          <!-- Se llenará desde app.js -->
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- 5. FORMULARIO CREAR/EDITAR -->
   <section id="formulario-seccion" class="container my-5" hidden>
     <h2 id="form-title">Agregar Corredor</h2>
     <form id="member-form" class="p-4 border rounded shadow-sm bg-form-custom">
@@ -340,25 +284,20 @@
           <input type="number" name="km" id="km" class="form-control" step="0.1" required min="0">
         </div>
       </div>
-      
+
       <div class="row mb-3">
         <div class="col-md-6">
-            <label for="categoria" class="form-label">Categoría:</label>
-            <select name="categoria" id="categoria" class="form-select">
-              <option value="Principiante">Principiante</option>
-              <option value="Intermedio">Intermedio</option>
-              <option value="Avanzado">Avanzado</option>
-            </select>
+          <label for="categoria" class="form-label">Categoría:</label>
+          <select name="categoria" id="categoria" class="form-select">
+            <option value="Principiante">Principiante</option>
+            <option value="Intermedio">Intermedio</option>
+            <option value="Avanzado">Avanzado</option>
+          </select>
         </div>
         <div class="col-md-6">
-            <label for="tiempo" class="form-label">Mejor tiempo 5K (ej: 25:30):</label>
-            <input type="text" name="tiempo" id="tiempo" class="form-control" placeholder="MM:SS o HH:MM:SS">
+          <label for="tiempo" class="form-label">Mejor tiempo 5K (ej: 25:30):</label>
+          <input type="text" name="tiempo" id="tiempo" class="form-control" placeholder="MM:SS o HH:MM:SS">
         </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="avatar" class="form-label">Avatar (URL):</label>
-        <input type="url" name="avatar" id="avatar" class="form-control" placeholder="https://ejemplo.com/imagen.jpg">
       </div>
 
       <div class="d-flex justify-content-end gap-2">
@@ -368,9 +307,8 @@
     </form>
   </section>
 
-  <!-- TOAST de éxito -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="liveToast" class="toast align-items-center border-0" role="alert" <!-- Clase de color se añade en JS -->
+    <div id="liveToast" class="toast align-items-center border-0" role="alert">
       <div class="d-flex">
         <div class="toast-body" id="toast-message">
         </div>
@@ -380,7 +318,6 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS Bundle (incluye Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>

@@ -1,4 +1,3 @@
-// Tu función showToast
 function showToast(message, type = 'success') {
   const toastEl = document.getElementById('liveToast');
   const toastBody = document.getElementById('toast-message');
@@ -11,9 +10,9 @@ function showToast(message, type = 'success') {
   toastBody.textContent = message;
 
   const bgClasses = ['text-bg-success', 'text-bg-danger', 'text-bg-warning', 'text-bg-info'];
-  toastEl.classList.remove(...bgClasses); // Quitar clases de color previas
+  toastEl.classList.remove(...bgClasses); 
 
-  let toastClass = 'text-bg-success'; // Default
+  let toastClass = 'text-bg-success'; 
   if (type === 'danger') toastClass = 'text-bg-danger';
   else if (type === 'warning') toastClass = 'text-bg-warning';
   else if (type === 'info') toastClass = 'text-bg-info';
@@ -29,7 +28,7 @@ function showToast(message, type = 'success') {
   let members = [];
 
   const membersBody = document.getElementById('members-body');
-  const rankingBody = document.getElementById('ranking-body'); // Referencia al tbody del ranking
+  const rankingBody = document.getElementById('ranking-body'); 
   const searchInput = document.getElementById('search-input');
   const btnNuevo = document.getElementById('btn-nuevo');
 
@@ -44,7 +43,6 @@ function showToast(message, type = 'success') {
   const inputKm = document.getElementById('km');
   const inputCategoria = document.getElementById('categoria');
   const inputTiempo = document.getElementById('tiempo');
-  const inputAvatar = document.getElementById('avatar');
 
   function init() {
     const stored = localStorage.getItem('club_members');
@@ -54,7 +52,6 @@ function showToast(message, type = 'success') {
         } catch (e) {
             console.error("Error al parsear miembros desde localStorage:", e);
             members = [];
-            // localStorage.removeItem('club_members'); // Opcional: limpiar si está corrupto
         }
     } else {
         members = [];
@@ -162,7 +159,6 @@ function showToast(message, type = 'success') {
         if (inputKm) inputKm.value = member.km;
         if (inputCategoria) inputCategoria.value = member.categoria;
         if (inputTiempo) inputTiempo.value = member.tiempo;
-        if (inputAvatar) inputAvatar.value = member.avatar;
       } else {
         showToast(`Error: No se encontró el miembro para editar.`, 'danger');
         return;
@@ -195,7 +191,6 @@ function showToast(message, type = 'success') {
       km: parseFloat(inputKm.value),
       categoria: inputCategoria.value,
       tiempo: inputTiempo.value.trim(),
-      avatar: inputAvatar.value.trim()
     };
 
     if (!memberData.nombre) {
@@ -241,10 +236,9 @@ function showToast(message, type = 'success') {
   document.addEventListener('DOMContentLoaded', () => {
     init();
 
-    // Smooth scroll para enlaces del navbar con offset
     const navLinks = document.querySelectorAll('.custom-navbar .nav-link[href^="#"]');
     const navbarElement = document.querySelector('.custom-navbar');
-    const navbarHeight = navbarElement ? navbarElement.offsetHeight : 70; // Fallback
+    const navbarHeight = navbarElement ? navbarElement.offsetHeight : 70;
 
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -261,13 +255,10 @@ function showToast(message, type = 'success') {
                     behavior: 'smooth'
                 });
 
-                // Cerrar menú colapsado en móviles
                 const navbarCollapse = document.getElementById('navbarNavClub');
                 if (navbarCollapse && navbarCollapse.classList.contains('show')) {
                     const toggler = document.querySelector('.navbar-toggler[data-bs-target="#navbarNavClub"]');
                     if (toggler) {
-                        // Bootstrap 5.3 usa new bootstrap.Collapse(navbarCollapse).hide() o toggler.click()
-                        // toggler.click() es más simple si no tienes la instancia de Collapse
                         toggler.click();
                     }
                 }
