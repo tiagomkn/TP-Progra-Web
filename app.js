@@ -32,7 +32,7 @@ function showToast(message, type = 'success') {
   const searchInput = document.getElementById('search-input');
   const btnNuevo = document.getElementById('btn-nuevo');
 
-  const formularioSection = document.getElementById('formulario-seccion'); // ID de sección actualizado
+  const formularioSection = document.getElementById('formulario-seccion');
   const form = document.getElementById('member-form');
   const formTitle = document.getElementById('form-title');
   const btnCancelar = document.getElementById('btn-cancelar');
@@ -63,7 +63,7 @@ function showToast(message, type = 'success') {
     if (searchInput) searchInput.addEventListener('input', renderMembers);
 
     renderMembers();
-    renderRanking(); // Renderizar el ranking al iniciar
+    renderRanking();
   }
 
   function saveMembers() {
@@ -91,13 +91,13 @@ function showToast(message, type = 'success') {
         const avatarSrc = member.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(member.nombre || 'S A')}&background=00ff88&color=121212&size=40&bold=true&format=svg`;
         
         tr.innerHTML = `
-            <td><img src="${avatarSrc}" alt="${member.nombre || 'Avatar'}" class="member-avatar"></td>
-            <td>${member.nombre || 'N/A'}</td>
-            <td>${member.edad || 'N/A'}</td>
-            <td>${member.km !== undefined ? member.km + ' km' : 'N/A'}</td>
-            <td>${member.categoria || 'N/A'}</td>
-            <td>${member.tiempo || 'N/A'}</td>
-            <td>
+            <td data-label="Avatar"><img src="${avatarSrc}" alt="${member.nombre || 'Avatar'}" class="member-avatar"></td>
+            <td data-label="Nombre">${member.nombre || 'N/A'}</td>
+            <td data-label="Edad">${member.edad || 'N/A'}</td>
+            <td data-label="Km">${member.km !== undefined ? member.km + ' km' : 'N/A'}</td>
+            <td data-label="Categoría">${member.categoria || 'N/A'}</td>
+            <td data-label="Tiempo 5K">${member.tiempo || 'N/A'}</td>
+            <td data-label="Acciones">
               <button data-id="${member.id}" class="btn btn-sm btn-outline-primary edit-btn me-1" title="Editar">✏️</button>
               <button data-id="${member.id}" class="btn btn-sm btn-outline-danger delete-btn" title="Eliminar">❌</button>
             </td>
@@ -111,7 +111,6 @@ function showToast(message, type = 'success') {
       });
   }
 
-  // ----- Renderizado del ranking -----
   function renderRanking() {
     if (!rankingBody) return;
     rankingBody.innerHTML = '';
@@ -136,11 +135,11 @@ function showToast(message, type = 'success') {
       else place = `<span class="fw-normal">${index + 1}</span>`;
 
       tr.innerHTML = `
-          <td class="fw-bold text-center">${place}</td>
-          <td>${member.nombre || 'N/A'}</td>
-          <td>${member.km !== undefined ? member.km + ' km' : 'N/A'}</td>
-          <td>${member.categoria || 'N/A'}</td>
-          <td>${member.tiempo || 'N/A'}</td>
+          <td data-label="#" class="fw-bold text-center">${place}</td>
+          <td data-label="Nombre">${member.nombre || 'N/A'}</td>
+          <td data-label="Km Totales">${member.km !== undefined ? member.km + ' km' : 'N/A'}</td>
+          <td data-label="Categoría">${member.categoria || 'N/A'}</td>
+          <td data-label="Mejor Tiempo 5K">${member.tiempo || 'N/A'}</td>
         `;
       rankingBody.appendChild(tr);
     });
@@ -219,7 +218,7 @@ function showToast(message, type = 'success') {
 
     saveMembers();
     renderMembers();
-    renderRanking(); // Actualizar ranking
+    renderRanking();
     closeForm();
   }
 
@@ -228,7 +227,7 @@ function showToast(message, type = 'success') {
       members = members.filter(m => m.id !== id);
       saveMembers();
       renderMembers();
-      renderRanking(); // Actualizar ranking
+      renderRanking();
       showToast('Corredor eliminado.', 'info');
     }
   }
