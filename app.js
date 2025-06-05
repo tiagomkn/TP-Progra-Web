@@ -228,7 +228,7 @@ function showToast(message, type = 'success') {
       saveMembers();
       renderMembers();
       renderRanking();
-      showToast('Corredor eliminado.', 'info');
+      showToast('Corredor eliminado.', 'danger');
     }
   }
   
